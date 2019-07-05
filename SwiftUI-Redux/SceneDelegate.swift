@@ -8,11 +8,27 @@
 
 import UIKit
 import SwiftUI
+import ReSwift
+
+final class AppMain {
+    
+    var reduxStore: ReduxStore
+    
+    init(store: Store<AppState> = makeSrore()) {
+        self.reduxStore = ReduxStore(store: store)
+    }
+}
+
+func makeSrore() -> Store<AppState> {
+    var middleware = [MiddlewareFunction]()
+    middleware.append(thunkMiddleware)
+    return Store<AppState>(reducer: appReducer, state: nil, middleware: middleware)
+}
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    private lazy var appMain = AppMain()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,7 +37,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Use a UIHostingController as window root view controller
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIHostingController(rootView: ContentView())
+        let reduxStore = appMain.reduxStore
+        let state = reduxStore.state.listState
+        window.rootViewController = UIHostingController(rootView: RepositoryListView(reduxStore: reduxStore, state: state))
         self.window = window
         window.makeKeyAndVisible()
     }
