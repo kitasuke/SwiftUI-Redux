@@ -4,6 +4,10 @@ Redux enables us to have unidirectional data flow and make it testable on top of
 
 <img src="https://raw.githubusercontent.com/wiki/kitasuke/SwiftUI-MVVM/images/screenshot.png" width=320>
 
+## Caution
+
+Architecture of this project might not be pure Redux. There is a high chance that my idea of Redux/ReSwift is partially wrong.
+
 ## Requirements
 
 Xcode 11.0 Beta 3+  
