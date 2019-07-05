@@ -21,9 +21,9 @@ protocol RequestActionCreatorable {
 }
 
 public struct ThunkAction: Action {
-    public let future: Publishers.Future<Action, Never>
+    public let future: Future<Action, Never>
     
-    public init(_ future: Publishers.Future<Action, Never>) {
+    public init(_ future: Future<Action, Never>) {
         self.future = future
     }
 }

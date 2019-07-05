@@ -14,7 +14,7 @@ struct RepositoryListRow: View {
     @State var repository: Repository
 
     var body: some View {
-        NavigationButton(destination: RepositoryDetailView(text: repository.fullName)) {
+        NavigationLink(destination: RepositoryDetailView(text: repository.fullName)) {
             Text(repository.fullName)
         }
     }

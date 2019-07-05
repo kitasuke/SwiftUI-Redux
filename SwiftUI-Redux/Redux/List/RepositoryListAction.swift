@@ -18,7 +18,7 @@ enum RepositoryListAction: Action {
     static func requestAsyncCreator() -> RequestActionCreator {
         return { (_, store: DispatchingStoreType) in
             return ThunkAction(
-                Publishers.Future<Action, Never> { promise in
+                Future<Action, Never> { promise in
                     _ = APIService().response(from: SearchRepositoryRequest())
                         .catch { error -> Publishers.Empty<SearchRepositoryResponse, Never> in
                             store.dispatch(RepositoryListAction.showError(error))

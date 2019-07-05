@@ -6,7 +6,7 @@ Redux enables us to have unidirectional data flow and make it testable on top of
 
 ## Requirements
 
-Xcode 11.0 Beta 2+  
+Xcode 11.0 Beta 3+  
 Swift 5.1+
 
 ## More examples
