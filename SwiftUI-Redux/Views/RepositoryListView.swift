@@ -13,9 +13,9 @@ struct RepositoryListView : View {
     @ObjectBinding var state: RepositoryListState
     let reduxStore: ReduxStore
 
-    init(reduxStore: ReduxStore, state: RepositoryListState) {
+    init(reduxStore: ReduxStore) {
         self.reduxStore = reduxStore
-        self.state = state
+        self.state = reduxStore.state.listState
     }
     
     var body: some View {
@@ -34,9 +34,8 @@ struct RepositoryListView : View {
 
 #if DEBUG
 struct RepositoryListView_Previews : PreviewProvider {
-    static let appMain = AppMain()
     static var previews: some View {
-        RepositoryListView(reduxStore: appMain.reduxStore, state: appMain.reduxStore.state.listState)
+        RepositoryListView(reduxStore: AppMain().reduxStore)
     }
 }
 #endif

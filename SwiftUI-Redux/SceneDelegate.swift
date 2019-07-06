@@ -38,9 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            let reduxStore = appMain.reduxStore
-            let state = reduxStore.state.listState
-            window.rootViewController = UIHostingController(rootView: RepositoryListView(reduxStore: reduxStore, state: state))
+            window.rootViewController = UIHostingController(rootView: RepositoryListView(reduxStore: appMain.reduxStore))
             self.window = window
             window.makeKeyAndVisible()
         }
