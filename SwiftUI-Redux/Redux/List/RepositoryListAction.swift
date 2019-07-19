@@ -20,9 +20,9 @@ enum RepositoryListAction: Action {
             return ThunkAction(
                 Future<Action, Never> { promise in
                     _ = APIService().response(from: SearchRepositoryRequest())
-                        .catch { error -> Publishers.Empty<SearchRepositoryResponse, Never> in
+                        .catch { error -> Empty<SearchRepositoryResponse, Never> in
                             store.dispatch(RepositoryListAction.showError(error))
-                            return Publishers.Empty()
+                            return .init()
                         }
                         .map { RepositoryListAction.updateRepositories($0.items) }
                         .sink(receiveValue: { action in

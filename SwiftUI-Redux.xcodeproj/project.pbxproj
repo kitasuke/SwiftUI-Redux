@@ -75,6 +75,7 @@
 		EC139E1822B4E6BD003B138A /* SwiftUI-ReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-ReduxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC139E1C22B4E6BD003B138A /* SwiftUI_ReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ReduxTests.swift; sourceTree = "<group>"; };
 		EC139E1E22B4E6BD003B138A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC71B96122E1EDB200F20BE8 /* Xcode11Beta4Fix.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Xcode11Beta4Fix.xcconfig; sourceTree = "<group>"; };
 		ECC12E9822B63B9000ED3FC3 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +184,7 @@
 				EC139E0B22B4E6BD003B138A /* Assets.xcassets */,
 				EC139E1022B4E6BD003B138A /* LaunchScreen.storyboard */,
 				EC139E1322B4E6BD003B138A /* Info.plist */,
+				EC71B96122E1EDB200F20BE8 /* Xcode11Beta4Fix.xcconfig */,
 				EC139E0D22B4E6BD003B138A /* Preview Content */,
 			);
 			path = "SwiftUI-Redux";

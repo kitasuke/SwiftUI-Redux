@@ -10,7 +10,7 @@ Architecture of this project might not be pure Redux. There is a high chance tha
 
 ## Requirements
 
-Xcode 11.0 Beta 3+  
+Xcode 11.0 Beta 4+  
 Swift 5.1+
 
 ## More examples
