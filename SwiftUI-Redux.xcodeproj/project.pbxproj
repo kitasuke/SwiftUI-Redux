@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,7 +24,6 @@
 		EC106C7722CB8D4B0010C543 /* RepositoryListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC106C7622CB8D4B0010C543 /* RepositoryListState.swift */; };
 		EC106C7922CB8F330010C543 /* RepositoryListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC106C7822CB8F330010C543 /* RepositoryListReducer.swift */; };
 		EC106C7B22CB8F660010C543 /* RepositoryListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC106C7A22CB8F660010C543 /* RepositoryListAction.swift */; };
-		EC106C7E22CDFEF20010C543 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC12E9822B63B9000ED3FC3 /* ReSwift.framework */; };
 		EC106C8122CEDBA20010C543 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC106C8022CEDBA20010C543 /* Middleware.swift */; };
 		EC106C8322CEDC040010C543 /* ReduxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC106C8222CEDC040010C543 /* ReduxStore.swift */; };
 		EC139E0622B4E6BC003B138A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC139E0522B4E6BC003B138A /* AppDelegate.swift */; };
@@ -33,6 +32,7 @@
 		EC139E0F22B4E6BD003B138A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC139E0E22B4E6BD003B138A /* Preview Assets.xcassets */; };
 		EC139E1222B4E6BD003B138A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC139E1022B4E6BD003B138A /* LaunchScreen.storyboard */; };
 		EC139E1D22B4E6BD003B138A /* SwiftUI_ReduxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC139E1C22B4E6BD003B138A /* SwiftUI_ReduxTests.swift */; };
+		EC67E57522F0964400B2382C /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC67E57422F0964400B2382C /* ReSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,6 @@
 		EC139E1822B4E6BD003B138A /* SwiftUI-ReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-ReduxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC139E1C22B4E6BD003B138A /* SwiftUI_ReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ReduxTests.swift; sourceTree = "<group>"; };
 		EC139E1E22B4E6BD003B138A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC71B96122E1EDB200F20BE8 /* Xcode11Beta4Fix.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Xcode11Beta4Fix.xcconfig; sourceTree = "<group>"; };
 		ECC12E9822B63B9000ED3FC3 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC106C7E22CDFEF20010C543 /* ReSwift.framework in Frameworks */,
+				EC67E57522F0964400B2382C /* ReSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +183,6 @@
 				EC139E0B22B4E6BD003B138A /* Assets.xcassets */,
 				EC139E1022B4E6BD003B138A /* LaunchScreen.storyboard */,
 				EC139E1322B4E6BD003B138A /* Info.plist */,
-				EC71B96122E1EDB200F20BE8 /* Xcode11Beta4Fix.xcconfig */,
 				EC139E0D22B4E6BD003B138A /* Preview Content */,
 			);
 			path = "SwiftUI-Redux";
@@ -225,13 +223,15 @@
 				EC139DFE22B4E6BC003B138A /* Sources */,
 				EC139DFF22B4E6BC003B138A /* Frameworks */,
 				EC139E0022B4E6BC003B138A /* Resources */,
-				EC106C7F22CE546D0010C543 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "SwiftUI-Redux";
+			packageProductDependencies = (
+				EC67E57422F0964400B2382C /* ReSwift */,
+			);
 			productName = "SwiftUI-Redux";
 			productReference = EC139E0222B4E6BC003B138A /* SwiftUI-Redux.app */;
 			productType = "com.apple.product-type.application";
@@ -282,6 +282,9 @@
 				Base,
 			);
 			mainGroup = EC139DF922B4E6BC003B138A;
+			packageReferences = (
+				EC67E57322F0964400B2382C /* XCRemoteSwiftPackageReference "ReSwift" */,
+			);
 			productRefGroup = EC139E0322B4E6BC003B138A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -311,27 +314,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		EC106C7F22CE546D0010C543 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC139DFE22B4E6BC003B138A /* Sources */ = {
@@ -514,10 +496,7 @@
 				DEVELOPMENT_ASSET_PATHS = "SwiftUI-Redux/Preview\\ Content";
 				DEVELOPMENT_TEAM = 34P5LXX69P;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SwiftUI-Redux/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,10 +517,7 @@
 				DEVELOPMENT_ASSET_PATHS = "SwiftUI-Redux/Preview\\ Content";
 				DEVELOPMENT_TEAM = 34P5LXX69P;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SwiftUI-Redux/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -627,6 +603,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC67E57322F0964400B2382C /* XCRemoteSwiftPackageReference "ReSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReSwift/ReSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC67E57422F0964400B2382C /* ReSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC67E57322F0964400B2382C /* XCRemoteSwiftPackageReference "ReSwift" */;
+			productName = ReSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC139DFA22B4E6BC003B138A /* Project object */;
 }
