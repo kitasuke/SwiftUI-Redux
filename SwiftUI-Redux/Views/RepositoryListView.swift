@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 struct RepositoryListView : View {
-    @ObjectBinding var state: RepositoryListState
+    @ObservedObject var state: RepositoryListState
     let reduxStore: ReduxStore
 
     init(reduxStore: ReduxStore) {

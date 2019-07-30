@@ -12,24 +12,24 @@ import Combine
 import SwiftUI
 
 // MARK: State
-final class RepositoryListState: StateType, BindableObject {
-    let willChange: AnyPublisher<Void, Never>
-    private let willChangeSubject = PassthroughSubject<Void, Never>()
+final class RepositoryListState: StateType, ObservableObject {
+    let objectWillChange: AnyPublisher<Void, Never>
+    private let objectWillChangeSubject = PassthroughSubject<Void, Never>()
     
     var repositories: [Repository] = [] {
-        didSet { willChangeSubject.send(()) }
+        didSet { objectWillChangeSubject.send(()) }
     }
     var isErrorShown: Bool = false {
-        didSet { willChangeSubject.send(()) }
+        didSet { objectWillChangeSubject.send(()) }
     }
     var errorMessage: String = "" {
-        didSet { willChangeSubject.send(()) }
+        didSet { objectWillChangeSubject.send(()) }
     }
     var shouldShowIcon: Bool = false {
-        didSet { willChangeSubject.send(()) }
+        didSet { objectWillChangeSubject.send(()) }
     }
     
     init() {
-        willChange = willChangeSubject.eraseToAnyPublisher()
+        objectWillChange = objectWillChangeSubject.eraseToAnyPublisher()
     }
 }
