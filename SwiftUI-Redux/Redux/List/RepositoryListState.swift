@@ -13,23 +13,8 @@ import SwiftUI
 
 // MARK: State
 final class RepositoryListState: StateType, ObservableObject {
-    let objectWillChange: AnyPublisher<Void, Never>
-    private let objectWillChangeSubject = PassthroughSubject<Void, Never>()
-    
-    var repositories: [Repository] = [] {
-        didSet { objectWillChangeSubject.send(()) }
-    }
-    var isErrorShown: Bool = false {
-        didSet { objectWillChangeSubject.send(()) }
-    }
-    var errorMessage: String = "" {
-        didSet { objectWillChangeSubject.send(()) }
-    }
-    var shouldShowIcon: Bool = false {
-        didSet { objectWillChangeSubject.send(()) }
-    }
-    
-    init() {
-        objectWillChange = objectWillChangeSubject.eraseToAnyPublisher()
-    }
+    @Published var repositories: [Repository] = []
+    @Published var isErrorShown: Bool = false
+    @Published var errorMessage: String = ""
+    @Published var shouldShowIcon: Bool = false
 }
